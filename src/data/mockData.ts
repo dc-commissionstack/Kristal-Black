@@ -6,18 +6,16 @@ import { ArtistInfo, Album, MerchItem } from '../types';
  */
 
 export const mockArtist: ArtistInfo = {
-  name: "ARTIST NAME",
+  name: "Kristal Black",
   bio: [
-    "Independent artist crafting genre-blending sounds from the intersection of electronic, indie rock, and ambient music. With influences ranging from classic synthesizer pioneers to modern lo-fi producers, every track is a journey into texture and emotion.",
-    "Based in Brooklyn, NY, the project started as a bedroom recording experiment and has grown into a full-fledged independent operation — handling every aspect of production, design, and distribution without a label.",
+    "Independent artist crafting genre-blending sounds. Every track is a journey into texture and emotion.",
     "Direct Stage gives fans a direct line to the music. No algorithms. No gatekeepers. Just the art, exactly as it was meant to be heard.",
   ],
-  imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-  genre: "Electronic / Indie",
-  location: "Brooklyn, NY",
+  imageUrl: "",
+  genre: "Electronic / R&B",
+  location: "Los Angeles, CA",
   socialLinks: [
     { platform: "Instagram", url: "#", icon: "instagram" },
-    { platform: "Twitter / X", url: "#", icon: "twitter" },
     { platform: "YouTube", url: "#", icon: "youtube" },
     { platform: "Spotify", url: "#", icon: "spotify" },
   ],

@@ -6,11 +6,6 @@ export default function Hero() {
     <section className="hero" id="hero">
       <div className="hero__bg">
         <div className="hero__bg-overlay" />
-        <img
-          src={mockArtist.imageUrl}
-          alt={`${mockArtist.name} — artist photo`}
-          className="hero__bg-image"
-        />
       </div>
       <div className="hero__content container">
         <div className="hero__tags">

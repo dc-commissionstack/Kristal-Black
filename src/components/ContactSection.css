@@ -1,0 +1,47 @@
+.contact__card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+}
+
+.contact__form {
+  display: flex;
+  gap: var(--space-md);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.contact__input {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.contact__input:focus {
+  border-color: var(--color-primary);
+}
+
+.contact__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.contact__note {
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 600px) {
+  .contact__form {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,154 @@
+.music__albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.music__album-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+  width: 100%;
+}
+
+.music__album-card:hover,
+.music__album-card.active {
+  border-color: var(--color-primary);
+  background: rgba(233, 69, 96, 0.08);
+}
+
+.music__album-art {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.music__album-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music__album-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music__album-year {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.music__album-price {
+  font-weight: 600;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.music__tracklist {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.music__tracklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.music__tracklist-header h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.music__tracks {
+  padding: 0;
+}
+
+.music__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-fast);
+}
+
+.music__track:last-child {
+  border-bottom: none;
+}
+
+.music__track:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.music__track-num {
+  width: 24px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-align: right;
+}
+
+.music__track-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music__track-title {
+  font-weight: 500;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music__track-duration {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  width: 48px;
+  text-align: right;
+}
+
+.music__track-price {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  width: 48px;
+  text-align: right;
+}
+
+.music__track .btn {
+  font-size: var(--font-size-sm);
+  padding: 0.4rem 0.85rem;
+  min-width: 80px;
+}
+
+@media (max-width: 600px) {
+  .music__track {
+    flex-wrap: wrap;
+    padding: var(--space-sm) var(--space-md);
+  }
+  .music__track-duration,
+  .music__track-price {
+    display: none;
+  }
+}

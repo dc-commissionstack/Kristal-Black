@@ -12,7 +12,7 @@ export const mockArtist: ArtistInfo = {
     "Direct Stage gives fans a direct line to the music. No algorithms. No gatekeepers. Just the art, exactly as it was meant to be heard.",
   ],
   imageUrl: "",
-  genre: "Electronic / R&B",
+  genre: "Rap / Hip-Hop",
   location: "Los Angeles, CA",
   socialLinks: [
     { platform: "Instagram", url: "#", icon: "instagram" },

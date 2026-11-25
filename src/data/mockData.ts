@@ -21,36 +21,27 @@ export const mockArtist: ArtistInfo = {
   ],
 };
 
+/**
+ * Kristal Black's real recordings. Titles come from the master file names.
+ * trackUrl stays empty until the MP3 is in public/music/<id>.mp3;
+ * then set trackUrl to "/music/<id>.mp3" and fill in duration.
+ */
 export const mockAlbums: Album[] = [
   {
-    id: "album-1",
-    title: "Midnight Signals",
-    releaseYear: 2024,
-    artworkUrl: "https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=400&q=80",
-    price: 999, // $9.99
+    id: "kristal-black-singles",
+    title: "Kristal Black: Singles",
+    artworkUrl: "/kristal-black-logo.png",
+    price: 799, // placeholder price, set by the artist
     tracks: [
-      { id: "track-1", title: "Neon Drift", duration: "4:12", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-2", title: "Pulse Wave", duration: "3:48", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-3", title: "Signal Lost", duration: "5:02", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-4", title: "Analog Dreams", duration: "4:30", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-5", title: "Transmission", duration: "6:15", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-6", title: "Static Bloom", duration: "3:55", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-7", title: "Resonance", duration: "4:44", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-8", title: "Afterglow", duration: "5:20", price: 99, trackUrl: "#", artworkUrl: "" },
-    ],
-  },
-  {
-    id: "album-2",
-    title: "Static Bloom",
-    releaseYear: 2023,
-    artworkUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&q=80",
-    price: 799,
-    tracks: [
-      { id: "track-9", title: "Dawn Chorus", duration: "4:02", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-10", title: "Phase Shift", duration: "3:32", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-11", title: "Echoes", duration: "5:45", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-12", title: "Glow", duration: "4:18", price: 99, trackUrl: "#", artworkUrl: "" },
-      { id: "track-13", title: "Horizon Line", duration: "6:00", price: 99, trackUrl: "#", artworkUrl: "" },
+      { id: "when-u-see-me", title: "When U See Me", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "dont-violate", title: "Don't Violate", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "jook-with-flexion", title: "Jook With Flexion", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "outside", title: "Outside", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "feeling-you", title: "Feeling You", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "spend-some-time", title: "Spend Some Time", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "on-tha-dead-homies", title: "On Tha Dead Homies", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "whip-it", title: "Whip It", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
+      { id: "az-new-session-1", title: "AZ New Session 1 (Rough)", duration: "", price: 99, trackUrl: "", artworkUrl: "" },
     ],
   },
 ];

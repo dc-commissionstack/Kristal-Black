@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { mockAlbums } from '../data/mockData';
 import { CartItem, Album, Track } from '../types';
 import './MusicSection.css';
@@ -10,6 +10,24 @@ interface MusicSectionProps {
 export default function MusicSection({ onAddToCart }: MusicSectionProps) {
   const [activeAlbum, setActiveAlbum] = useState<string>(mockAlbums[0]?.id || '');
   const [purchasing, setPurchasing] = useState<string | null>(null);
+  const [playing, setPlaying] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const hasAudio = (track: Track) => Boolean(track.trackUrl) && track.trackUrl !== '#';
+
+  const togglePlay = (track: Track) => {
+    if (!hasAudio(track)) return;
+    if (playing === track.id) {
+      audioRef.current?.pause();
+      setPlaying(null);
+      return;
+    }
+    audioRef.current?.pause();
+    const audio = new Audio(track.trackUrl);
+    audio.onended = () => setPlaying(null);
+    audioRef.current = audio;
+    audio.play().then(() => setPlaying(track.id)).catch(() => setPlaying(null));
+  };
 
   const currentAlbum = mockAlbums.find((a) => a.id === activeAlbum);
 
@@ -58,7 +76,9 @@ export default function MusicSection({ onAddToCart }: MusicSectionProps) {
               <img src={album.artworkUrl} alt={album.title} className="music__album-art" />
               <div className="music__album-info">
                 <h3 className="music__album-title">{album.title}</h3>
-                <span className="music__album-year">{album.releaseYear}</span>
+                <span className="music__album-year">
+                  {album.releaseYear ?? `${album.tracks.length} tracks`}
+                </span>
               </div>
               <span className="music__album-price">${(album.price / 100).toFixed(2)}</span>
             </button>
@@ -81,11 +101,21 @@ export default function MusicSection({ onAddToCart }: MusicSectionProps) {
             <div className="music__tracks">
               {currentAlbum.tracks.map((track, idx) => (
                 <div key={track.id} className="music__track">
-                  <span className="music__track-num">{idx + 1}</span>
+                  {hasAudio(track) ? (
+                    <button
+                      className="music__track-play"
+                      onClick={() => togglePlay(track)}
+                      aria-label={playing === track.id ? `Pause ${track.title}` : `Play ${track.title}`}
+                    >
+                      {playing === track.id ? '❚❚' : '▶'}
+                    </button>
+                  ) : (
+                    <span className="music__track-num">{idx + 1}</span>
+                  )}
                   <div className="music__track-info">
                     <span className="music__track-title">{track.title}</span>
                   </div>
-                  <span className="music__track-duration">{track.duration}</span>
+                  {track.duration && <span className="music__track-duration">{track.duration}</span>}
                   <span className="music__track-price">${(track.price / 100).toFixed(2)}</span>
                   <button
                     className={`btn ${purchasing === track.id ? 'btn-success' : 'btn-secondary'}`}

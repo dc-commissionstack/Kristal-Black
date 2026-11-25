@@ -11,7 +11,7 @@ export interface Track {
 export interface Album {
   id: string;
   title: string;
-  releaseYear: number;
+  releaseYear?: number;
   artworkUrl: string;
   price: number;
   tracks: Track[];
